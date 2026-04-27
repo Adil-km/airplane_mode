@@ -1,0 +1,17 @@
+<div class="bg-white border border-grey rounded p-3 m-3">
+	<h4 class="p-0 m-0">{{ frappe.get_doc("Airplane", doc.airplane).airline}}</h4>
+	<div class="flex-column">
+		<span class="text-grey">
+			{{source_airport_code}} -> {{destination_airport_code}}
+		</span>
+		
+		<span class="text-dark py-1">
+			{{date_of_departure}} | {{time_of_departure}} | {{frappe.utils.format_duration(doc.duration)}}
+		</span>
+		
+		<a class="py-2 text-info" href="/{{ doc.route |e }}">
+			View Flight
+		</a>
+	</div>
+</div>
+<!-- this is a sample default list template -->
